@@ -1,0 +1,417 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+html body{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+}
+
+#main{
+    display: flex;
+    height: 100vh;
+    padding: 0.5rem;
+}
+
+.sidebar{
+    background-color: #000000;
+    width: 20vw;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+}
+
+.main-content{
+    background-color: #121212;
+    flex: 1;
+    border-radius: 1rem; /*16px*/
+    overflow: auto;
+    padding: 0 1.5rem 0 1.5rem;
+    height: 88%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.nav{
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    padding: 0.5rem 0.75rem;
+}
+
+.nav-option{
+    line-height: 2.5rem;
+    opacity: 0.7;
+    display: flex;
+    transition: all 0.2s linear;
+    padding: 0.5rem 0.75rem;
+    align-items: center;
+}
+
+.nav-option:hover{
+    opacity: 1;
+}
+
+.nav-option i{
+    font-size: 1.25rem;
+}
+
+.nav-option a{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.library{
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 72%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.lib-option img{
+    width: 1.25rem;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon{
+    font-size: 1.25rem;
+    display: flex;
+}
+
+.icon i{
+    opacity: 0.7;
+    margin-right: 1rem;
+}
+
+.icon i:hover{
+    opacity: 1;
+}
+
+.box{
+    /* height: 8rem; */
+    background-color: #232323;
+    border-radius: 0.75rem;
+    margin: 0.5rem 0 0.75rem 0;
+    padding: 0.75rem 1rem;
+}
+
+.box-p1{
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.box-p2{
+    font-size: 0.75rem;
+    opacity: 0.9;
+    line-height: 30px;
+}
+
+.badge{
+    background-color: #fff;
+    border: none;
+    border-radius: 100px;
+    color: black;
+    padding: 0.25rem 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    height: 2rem;
+    width: fit-content;
+}
+
+.sticky-nav{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    align-items: center;
+    padding: 1rem 0 1rem;
+}
+
+.sticky-nav-option i{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #a4a4a4;
+}
+
+.sticky-nav-option {
+    margin-left: 0.75rem;
+}
+
+.stick-nav-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item{
+    margin-right: 1.5rem;
+}
+
+.dark-badge{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.card{
+    background-color: #171717;
+    width: 200px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap; /* responsive*/
+}
+
+.card img{
+    height: 165px;
+    border-radius: 0.5rem;
+
+}
+
+.card .card-titel{
+    line-height: 3rem;
+    font-weight: 700;
+}
+
+.card .card-info{
+    opacity: 0.75;
+    font-size: 0.75rem;
+}
+
+.card:hover{
+    background-color: #232323;
+}
+
+.cards h2{
+    line-height: 4rem;
+}
+
+#footer{
+    height: 300px;
+   display: flex;
+    align-items: center;
+    /* justify-content: center; */ 
+}
+
+.footer-nav{
+    display: flex;
+    margin-top: 3rem;
+    width: 622px;
+    justify-content: space-between;
+    margin-left: 33px;
+}
+
+.footer-nav h4{
+    line-height: 2rem;
+}
+
+.footer-nav li{
+    list-style: none;
+    opacity: 0.5;
+    line-height: 1.75rem;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.footer-nav li:hover{
+    opacity: 1;
+    text-decoration: underline;
+}
+
+#social{
+    display: flex;
+    margin-left: 150px;
+    font-size: 20px;
+    width: 200px;
+    margin-bottom: 87px;
+    justify-content: space-around;
+}
+
+#social i{ 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    background-color: #242424;
+    border-radius: 50%;
+}
+
+#social i:hover{ 
+    background-color: #727272;
+}
+
+.line{
+    border-bottom: 1px solid #fff;
+    opacity: 0.2;
+}
+
+#nav-link ul{
+    display: flex;
+    gap: 3vw;
+    align-items: center;
+    margin-left: 2rem;
+    height: 200px;
+}
+
+#nav-link ul li{
+    opacity: 0.5;
+    list-style: none;
+}
+
+#nav-link ul h5{
+    margin-left: auto;
+    opacity: 0.5;
+}
+
+#nav-link ul li:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.music-player{
+    background-color: #000000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
+
+.album{
+    margin-left: 0.5vw;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    /* background-color: pink; */
+}
+
+.album img{
+    width: 3.5vw;
+    border-radius: 5px;
+    /* height: 8vh; */
+}
+
+.album .play-text{
+    margin-left: 1vw;
+}
+
+.album p{
+    font-size: 0.7vw;
+    opacity: 0.5;
+}
+
+
+.player{
+    /* margin-left: 25vw; */
+    width: 50%;
+    /* background-color: rgb(34, 12, 228); */
+}
+
+.player-controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player .player-controls i{
+    opacity: 0.5;
+    font-size: 1.3vw;
+    margin-right: 2vw;
+}
+
+.player .player-controls .play{
+    opacity: 1;
+    font-size: 2vw;
+}
+
+.player .player-controls i:hover{
+    opacity: 1;
+}
+
+.controls{
+    width: 25%;
+    height: 50px;
+    /* background-color: rgb(141, 219, 14); */
+}
+
+.playback-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-bar{
+    width: 70%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.playback-bar span{
+    opacity: 0.5;
+    font-size: 0.7vw;
+    padding: 20px;
+}
+
+.progress-bar::-webkit-slider-runnable-track{
+    background-color: #4D4D4D;
+    border-radius: 100px;
+    height: 0.3vw;
+}
+
+.progress-bar::-webkit-slider-thumb{
+    appearance: none;
+    width: 0.7vw;
+    height: 0.7vw;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: -3px;
+}
+
+
+
+
+
+
+
+
+/*MediaQuary*/
+
+@media (max-width: 1000px) {
+    .hide{
+        display: none;
+    }
+
+    #hide{
+        display: none;
+    }
+}
