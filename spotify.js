@@ -1,10 +1,15 @@
 let playBtn = document.querySelector(".play");
 
-let pauseBtn = "fa-solid fa-pause";
+let pauseBtn = "fa-pause";
+
+let start = document.querySelector(".start-time");
+
 
 playBtn.addEventListener("click", () => {
-    playBtn.classList.toggle("fa-pause");
-    playFunc()
+    
+    toggleFun();
+    
+    playFunc();
 });
 
 let startTime = 0;
@@ -12,14 +17,27 @@ let startTime = 0;
 let song = new Audio('songs/Chaleya.mp3');
 
 let playFunc = function() {
-    let start = document.querySelector(".start-time");
-    if(song.paused || song.currentTime<0){
-        song.play();
-    }
-
-    setInterval(() => {
+    
+    song.play();
+    
+    let startIntra = setInterval(() => {
         startTime += 1;
         start.textContent = startTime;
         console.log(startTime);
-    }, 1000)
+    }, 1000);
+    // clearInterval(startIntra)
+}
+
+let toggleFun = function(){
+    playBtn.classList.toggle("fa-pause");
+    pauseFun();
+}
+
+let pauseFun = function() {
+    let pause = document.querySelector(".fa-pause");
+
+    pause.addEventListener("click", () => {
+        console.log("stop");
+        song.pause();
+    })
 }
