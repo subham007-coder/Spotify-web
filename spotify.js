@@ -13,8 +13,10 @@ let song = new Audio('songs/Chaleya.mp3');
 
 let playFunc = function() {
     let start = document.querySelector(".start-time");
-    console.log(start);
-    song.play()
+    if(song.paused || song.currentTime<0){
+        song.play();
+    }
+
     setInterval(() => {
         startTime += 1;
         start.textContent = startTime;
