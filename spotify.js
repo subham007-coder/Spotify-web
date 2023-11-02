@@ -21,7 +21,7 @@ let playFunc = function() {
     song.play();
     
     let startIntra = setInterval(() => {
-        startTime += 1;
+        startTime += 0.01;
         start.textContent = startTime;
         console.log(startTime);
     }, 1000);
