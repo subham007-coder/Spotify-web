@@ -21,6 +21,7 @@ html body {
 
 .sidebar {
     background-color: #000000;
+    overflow: auto;
     width: 20vw;
     border-radius: 1rem;
     margin-right: 0.5rem;
@@ -73,12 +74,16 @@ a {
 }
 
 .library {
+    height: 498px;
     background-color: #121212;
     border-radius: 1rem;
-    height: 72%;
     margin-top: 0.5rem;
     padding: 0.5rem 0.75rem;
 }
+
+/* .lib-box {
+    height: 247px;
+} */
 
 .lib-option img {
     width: 1.25rem;
@@ -105,23 +110,23 @@ a {
 }
 
 .box {
-    /* height: 8rem; */
+    /* height: 30vh; */
     background-color: #232323;
     border-radius: 0.75rem;
-    margin: 0.5rem 0 0.75rem 0;
+    margin: 1.2vw 0 0.70vw 0;
     padding: 0.75rem 1rem;
 }
 
 .box-p1 {
     font-size: 1vw;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 20px;
 }
 
 .box-p2 {
     font-size: 1vw;
     opacity: 0.9;
-    line-height: 30px;
+    line-height: 20px;
 }
 
 .badge {
@@ -327,7 +332,7 @@ a {
     margin-left: 1vw;
 }
 
-.album .play-text h5{
+.album .play-text h5 {
     font-size: 1.2vw;
 }
 
@@ -406,24 +411,24 @@ a {
     height: 0.7vw;
     background-color: #fff;
     border-radius: 50%;
-    margin-top: -2.5px;
+    margin-top: -0.2vw;
 }
 
-.fa-heart{
+.fa-heart {
     color: rgb(196, 196, 196);
 }
 
-#green_heart{
+#green_heart {
     display: none;
     width: 10px;
     height: 20px;
 }
 
-#none{
+#none {
     display: none;
 }
 
-#view{
+#view {
     display: block;
 }
 
