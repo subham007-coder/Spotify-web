@@ -12,7 +12,9 @@ playBtn.addEventListener("click", () => {
     playFunc();
 });
 
-let startTime = 0;
+let secTime = 0;
+
+let minTime = 1;
 
 let song = new Audio('songs/Chaleya.mp3');
 
@@ -21,11 +23,18 @@ let playFunc = function() {
     song.play();
     
     let startIntra = setInterval(() => {
-        startTime += 0.01;
-        start.textContent = startTime;
-        console.log(startTime);
+        secTime += 1;
+        
+       start.textContent = `0:${secTime}`;
+       console.log(`0:${secTime}`);
+
+       if(secTime == `60`){
+        start.textContent = `${minTime}:00`;
+        console.log(`${minTime}:00`);
+        console.log(minTime);
+        clearInterval(startIntra);
+       }
     }, 1000);
-    // clearInterval(startIntra)
 }
 
 let toggleFun = function(){
