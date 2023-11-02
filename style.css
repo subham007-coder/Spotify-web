@@ -64,11 +64,11 @@ a {
 }
 
 .nav-option i {
-    font-size: 1.25rem;
+    font-size: 1.25vw;
 }
 
 .nav-option a {
-    font-size: 1rem;
+    font-size: 1.2vw;
     margin-left: 1rem;
 }
 
@@ -91,7 +91,7 @@ a {
 }
 
 .icon {
-    font-size: 1.25rem;
+    font-size: 10px;
     display: flex;
 }
 
@@ -113,13 +113,13 @@ a {
 }
 
 .box-p1 {
-    font-size: 1rem;
+    font-size: 1vw;
     font-weight: 600;
     line-height: 30px;
 }
 
 .box-p2 {
-    font-size: 0.75rem;
+    font-size: 1vw;
     opacity: 0.9;
     line-height: 30px;
 }
@@ -133,6 +133,7 @@ a {
     font-weight: 600;
     margin-top: 0.5rem;
     height: 2rem;
+    font-size: 1vw;
     width: fit-content;
 }
 
@@ -204,7 +205,7 @@ a {
 
 .card .card-info {
     opacity: 0.75;
-    font-size: 0.75rem;
+    font-size: 8px;
 }
 
 .card:hover {
@@ -326,8 +327,12 @@ a {
     margin-left: 1vw;
 }
 
+.album .play-text h5{
+    font-size: 1.2vw;
+}
+
 .album p {
-    font-size: 0.7vw;
+    font-size: 0.70vw;
     opacity: 0.5;
 }
 
@@ -341,22 +346,23 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 13px;
 }
 
 .player .player-controls i {
     opacity: 0.5;
-    font-size: 1.3vw;
+    font-size: 12px;
     margin-right: 2vw;
 }
 
 .player .player-controls .play {
     opacity: 1;
-    font-size: 2vw;
+    font-size: 20px;
 }
 
 .player .player-controls .fa-pause {
     opacity: 1;
-    font-size: 2vw;
+    font-size: 20px;
 }
 
 .player .player-controls i:hover {
@@ -384,7 +390,7 @@ a {
 
 .playback-bar span {
     opacity: 0.5;
-    font-size: 0.7vw;
+    font-size: 10px;
     padding: 20px;
 }
 
@@ -400,11 +406,26 @@ a {
     height: 0.7vw;
     background-color: #fff;
     border-radius: 50%;
-    margin-top: -3px;
+    margin-top: -2.5px;
 }
 
+.fa-heart{
+    color: rgb(196, 196, 196);
+}
 
+#green_heart{
+    display: none;
+    width: 10px;
+    height: 20px;
+}
 
+#none{
+    display: none;
+}
+
+#view{
+    display: block;
+}
 
 
 
