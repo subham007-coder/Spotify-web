@@ -13,6 +13,10 @@ html, body {
     background-color: #000;
 }
 
+html body i{
+    cursor: pointer;
+}
+
 #main {
     display: flex;
     height: 100vh;
@@ -351,13 +355,13 @@ a {
 
 .player .player-controls i {
     opacity: 0.5;
-    font-size: 12px;
+    font-size: 20px;
     margin-right: 2vw;
 }
 
 .player .player-controls .play {
     opacity: 1;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .player .player-controls .fa-pause {
