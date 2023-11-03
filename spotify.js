@@ -70,4 +70,21 @@ song.addEventListener("timeupdate", () => {
 
 sikBar.addEventListener("change", () => {
     song.currentTime = sikBar.value * song.duration / 100;
-})
+});
+
+let TimeEvent = new Date;
+
+let Hours = TimeEvent.getHours();
+
+if (Hours >=24 || Hours == 5) { // night
+    document.querySelector(".timeEvent h3").textContent = "Good Night";
+}
+if (Hours >=6 || Hours == 11) { // morning
+    document.querySelector(".timeEvent h3").textContent = "Good Morning";
+}
+if (Hours >=12 || Hours == 17) { // Good Afternoon
+    document.querySelector(".timeEvent h3").textContent = "Good Afternoon";
+}
+if (Hours >=18 || Hours == 23) { // Good Evening
+    document.querySelector(".timeEvent h3").textContent = "Good Evening";
+}
