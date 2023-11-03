@@ -6,14 +6,15 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     overflow: hidden;
     height: 100%;
     width: 100%;
     background-color: #000;
 }
 
-html body i{
+html body i {
     cursor: pointer;
 }
 
@@ -105,11 +106,11 @@ a {
     margin-right: 1rem;
 }
 
-.dark-badge i{
+.dark-badge i {
     font-size: 10px;
 }
 
-.dark-badge span{
+.dark-badge span {
     font-size: 10px;
 }
 
@@ -390,30 +391,36 @@ a {
     /* background-color: rgb(141, 219, 14); */
 }
 
-.controls img:nth-child(1){
+.controls img:nth-child(1) {
     width: 28px;
 }
-.controls img:nth-child(2){
+
+.controls img:nth-child(2) {
     margin-left: 5px;
     width: 24px;
 }
-.controls img:nth-child(3){
+
+.controls img:nth-child(3) {
     width: 33px;
 }
-.controls img:nth-child(4){
+
+.controls img:nth-child(4) {
     width: 31px;
 }
-.controls img:nth-child(5){
+
+.controls img:nth-child(5) {
     width: 33px;
 }
-.controls input:nth-child(6){
-    margin-left: 10px;
-}
-.controls img:nth-child(7){
+
+.controls input:nth-child(6) {
     margin-left: 10px;
 }
 
-.controls img:hover{
+.controls img:nth-child(7) {
+    margin-left: 10px;
+}
+
+.controls img:hover {
     cursor: pointer;
 }
 
@@ -436,14 +443,14 @@ a {
     padding: 10px;
 }
 
-#sound{
+#sound {
     width: 30%;
     appearance: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-#sound::-webkit-slider-runnable-track{
+#sound::-webkit-slider-runnable-track {
     background-color: #4D4D4D;
     border-radius: 100px;
     height: 0.3vw;
@@ -528,17 +535,17 @@ a {
         width: 25vw;
     }
 
-    .controls{
+    .controls {
         display: none;
     }
 
-    .album{
+    .album {
         width: 43%;
     }
 }
 
 @media (max-width: 900px) {
-    .controls input:nth-child(6){
+    .controls input:nth-child(6) {
         display: none;
     }
 }

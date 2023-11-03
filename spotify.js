@@ -72,6 +72,9 @@ sikBar.addEventListener("change", () => {
     song.currentTime = sikBar.value * song.duration / 100;
 });
 
+
+// say time to user
+
 let TimeEvent = new Date;
 
 let Hours = TimeEvent.getHours();
