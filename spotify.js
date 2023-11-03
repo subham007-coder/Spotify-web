@@ -79,15 +79,15 @@ let TimeEvent = new Date;
 
 let Hours = TimeEvent.getHours();
 
-if (Hours >=24 || Hours == 5) { // night
-    document.querySelector(".timeEvent h3").textContent = "Good Night";
+if (Hours >= 24 || Hours == 5) { // night
+    document.querySelector(".timeEvent h3").innerHTML = `Good Night <i class="ri-moon-line"></i>`;
 }
-if (Hours >=6 || Hours == 11) { // morning
-    document.querySelector(".timeEvent h3").textContent = "Good Morning";
+if (Hours >= 6 || Hours == 11) { // morning
+    document.querySelector(".timeEvent h3").innerHTML = `Good Morning <i class="ri-sun-cloudy-line"></i>`;
 }
-if (Hours >=12 || Hours == 17) { // Good Afternoon
-    document.querySelector(".timeEvent h3").textContent = "Good Afternoon";
+if (Hours >= 12 || Hours == 17) { // Good Afternoon
+    document.querySelector(".timeEvent h3").innerHTML = `Good Afternoon <i class="ri-sun-line"></i>`;
 }
-if (Hours >=18 || Hours == 23) { // Good Evening
-    document.querySelector(".timeEvent h3").textContent = "Good Evening";
+if (Hours >= 18 || Hours == 23) { // Good Evening
+    document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
