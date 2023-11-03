@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-html body {
+html, body {
     overflow: hidden;
     height: 100%;
     width: 100%;
