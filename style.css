@@ -105,6 +105,14 @@ a {
     margin-right: 1rem;
 }
 
+.dark-badge i{
+    font-size: 10px;
+}
+
+.dark-badge span{
+    font-size: 10px;
+}
+
 .icon i:hover {
     opacity: 1;
 }
@@ -342,7 +350,7 @@ a {
 
 .player {
     /* margin-left: 25vw; */
-    width: 50%;
+    width: 46%;
     /* background-color: rgb(34, 12, 228); */
 }
 
@@ -425,7 +433,7 @@ a {
 .playback-bar span {
     opacity: 0.5;
     font-size: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 #sound{
@@ -499,7 +507,7 @@ a {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
     .sidebar {
         display: none;
     }
@@ -518,5 +526,19 @@ a {
 
     .card img {
         width: 25vw;
+    }
+
+    .controls{
+        display: none;
+    }
+
+    .album{
+        width: 43%;
+    }
+}
+
+@media (max-width: 900px) {
+    .controls input:nth-child(6){
+        display: none;
     }
 }
