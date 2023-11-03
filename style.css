@@ -342,7 +342,7 @@ a {
 
 .player {
     /* margin-left: 25vw; */
-    width: 50%;
+    width: 46%;
     /* background-color: rgb(34, 12, 228); */
 }
 
@@ -374,9 +374,32 @@ a {
 }
 
 .controls {
+    display: flex;
+    align-items: center;
     width: 25%;
     height: 50px;
     /* background-color: rgb(141, 219, 14); */
+}
+
+.controls img:nth-child(1){
+    width: 28px;
+}
+.controls img:nth-child(2){
+    margin-left: 5px;
+    width: 24px;
+}
+.controls img:nth-child(3){
+    width: 33px;
+}
+.controls img:nth-child(4){
+    width: 31px;
+}
+.controls img:nth-child(5){
+    width: 33px;
+}
+
+.controls img:hover{
+    cursor: pointer;
 }
 
 .playback-bar {
@@ -396,6 +419,28 @@ a {
     opacity: 0.5;
     font-size: 10px;
     padding: 20px;
+}
+
+#sound{
+    width: 30%;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#sound::-webkit-slider-runnable-track{
+    background-color: #4D4D4D;
+    border-radius: 100px;
+    height: 0.3vw;
+}
+
+#sound::-webkit-slider-thumb {
+    appearance: none;
+    width: 0.7vw;
+    height: 0.7vw;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-top: -0.2vw;
 }
 
 .progress-bar::-webkit-slider-runnable-track {
