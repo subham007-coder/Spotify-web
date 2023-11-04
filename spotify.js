@@ -56,6 +56,7 @@ let sikBar = document.querySelector(".progress-bar");
 heart.addEventListener("click", () => {
     heart.id = "none";
     green_heart.id = "view";
+    green_heart.classList.add("ani");
 })
 green_heart.addEventListener("click", () => {
     heart.id = "view";
@@ -66,6 +67,13 @@ song.addEventListener("timeupdate", () => {
 
     let progresBar = parseInt((song.currentTime / song.duration) * 100);
     sikBar.value = progresBar;
+    console.log(progresBar);
+
+    if (progresBar == 100) {
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+    }
 })
 
 sikBar.addEventListener("change", () => {
@@ -79,7 +87,7 @@ let TimeEvent = new Date;
 
 let Hours = TimeEvent.getHours();
 
-if (Hours >= 24 || Hours == 5) { // night
+if (Hours >= 0 || Hours == 5) { // night
     document.querySelector(".timeEvent h3").innerHTML = `Good Night <i class="ri-moon-line"></i>`;
 }
 if (Hours >= 6 || Hours == 11) { // morning
