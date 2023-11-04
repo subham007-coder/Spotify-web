@@ -246,7 +246,6 @@ a {
 
 .footer-nav h4 {
     line-height: 20px;
-    font-size: 1.5vw;
 }
 
 .footer-nav li {
@@ -528,6 +527,22 @@ a {
     #hide {
         display: none;
     }
+
+    .footer-nav h4 {
+        font-size: 2vw;
+    }
+
+    .footer-nav li {
+        font-size: 1.7vw;
+    }
+   
+    #nav-link ul li{
+        font-size: 1.1vw;
+    }
+
+    #nav-link ul h5{
+        font-size: 8px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -558,10 +573,26 @@ a {
     .album {
         width: 43%;
     }
+
+    #social{
+        display: none;
+    }
+
+    #footer{
+        justify-content: center;
+    }
+
+    .footer-nav {
+        gap: 10vw;
+    }
 }
 
 @media (max-width: 900px) {
     .controls input:nth-child(6) {
         display: none;
+    }
+
+    #social{
+        margin-left: 0;
     }
 }
