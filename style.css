@@ -239,13 +239,14 @@ a {
 .footer-nav {
     display: flex;
     margin-top: 3rem;
-    width: 622px;
-    justify-content: space-between;
+    /* width: 622px; */
+    gap: 40px;
     margin-left: 33px;
 }
 
 .footer-nav h4 {
-    line-height: 2rem;
+    line-height: 20px;
+    font-size: 1.5vw;
 }
 
 .footer-nav li {
@@ -494,16 +495,17 @@ a {
     display: none;
 }
 
-.ani{
+.ani {
     animation: love 0.5s linear;
     position: relative;
 }
 
 @keyframes love {
-    0%{
+    0% {
         bottom: 20px;
     }
-    100%{
+
+    100% {
         bottom: 0;
     }
 }
