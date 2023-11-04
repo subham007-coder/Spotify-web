@@ -10,7 +10,7 @@ playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         playFunc();
-        // timeUpdate();
+        timeUpdate();
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -102,48 +102,34 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
 
-// let time = new Date;
-
-// let min = time.getMinutes = "0";
-// let sec = time.sec = "00";
-
-
-let secTime = "0";
-
-let minTime = "0";
-
-console.log("min :-", minTime);
-console.log("sec :-", secTime);
-
 let timeUpdate = function () {
+
     setInterval(() => {
-        secTime++;
-        console.log("sec :-", secTime);
-        if (secTime <= 9) {
-            start.textContent = `0:0${secTime}`;
-            console.log(`0:0${secTime}`);
+        let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
+        console.log(progresBarTime);
+
+
+        if (progresBarTime <= 9) {
+            start.textContent = `0:0${progresBarTime}`;
+            console.log(`0:0${progresBarTime}`);
         }
 
-        if (secTime >= 10) {
-            start.textContent = `0:${secTime}`;
-            console.log(`0:${secTime}`);
+        if (progresBarTime >= 10) {
+            start.textContent = `0:${progresBarTime}`;
+            console.log(`0:${progresBarTime}`);
         }
 
-        if (secTime >= 60) {
-            start.textContent = `1:0${secTime - 60}`;
-            console.log(`1:0${secTime - 60}`);
+        if (progresBarTime >= 60) {
+            start.textContent = `1:0${progresBarTime - 60}`;
+            console.log(`1:0${progresBarTime - 60}`);
         }
 
-        if (secTime >= 70) {
-            start.textContent = `1:${secTime - 60}`;
-            console.log(`1:${secTime - 60}`);
+        if (progresBarTime >= 70) {
+            start.textContent = `1:${progresBarTime - 60}`;
+            console.log(`1:${progresBarTime - 60}`);
         }
+
     }, 1000);
-
 }
 
 
-setInterval(() => {
-    let progresBar = parseInt((song.currentTime / song.duration) * 200);
-    console.log(progresBar);
-}, 1000)
