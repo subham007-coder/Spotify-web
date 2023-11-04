@@ -4,16 +4,13 @@ let pauseBtn = "fa-pause";
 
 let start = document.querySelector(".start-time");
 
-let secTime = 0;
-
-let minTime = 1;
-
 let song = new Audio('songs/Chaleya.mp3');
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         playFunc();
+        // timeUpdate();
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -29,8 +26,8 @@ playBtn.addEventListener("click", () => {
 
 
 let playFunc = function () {
-
     song.play();
+
 }
 
 let heart = document.querySelector(".fa-heart");
@@ -59,26 +56,26 @@ song.addEventListener("timeupdate", () => {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
-    } 
-    if(progresBar <= 9){
-        start.textContent = `0:0${progresBar}`;
-        console.log(`0:0${progresBar}`);
     }
+    // if(progresBar <= 9){
+    //     start.textContent = `0:0${progresBar}`;
+    //     console.log(`0:0${progresBar}`);
+    // }
 
-    if (progresBar >= 10) {
-        start.textContent = `0:${progresBar}`;
-        console.log(`0:${progresBar}`);
-    }
+    // if (progresBar >= 10) {
+    //     start.textContent = `0:${progresBar}`;
+    //     console.log(`0:${progresBar}`);
+    // }
 
-    if(progresBar >= 60){
-        start.textContent = `1:0${progresBar -60}`;
-        console.log(`1:0${progresBar -60}`);
-    }
+    // if(progresBar >= 60){
+    //     start.textContent = `1:0${progresBar -60}`;
+    //     console.log(`1:0${progresBar -60}`);
+    // }
 
-    if(progresBar >= 70){
-        start.textContent = `1:${progresBar -60}`;
-        console.log(`1:${progresBar -60}`);
-    }
+    // if(progresBar >= 70){
+    //     start.textContent = `1:${progresBar -60}`;
+    //     console.log(`1:${progresBar -60}`);
+    // }
 })
 
 sikBar.addEventListener("change", () => {
@@ -104,3 +101,49 @@ if (Hours >= 12 || Hours == 17) { // Good Afternoon
 if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
+
+// let time = new Date;
+
+// let min = time.getMinutes = "0";
+// let sec = time.sec = "00";
+
+
+let secTime = "0";
+
+let minTime = "0";
+
+console.log("min :-", minTime);
+console.log("sec :-", secTime);
+
+let timeUpdate = function () {
+    setInterval(() => {
+        secTime++;
+        console.log("sec :-", secTime);
+        if (secTime <= 9) {
+            start.textContent = `0:0${secTime}`;
+            console.log(`0:0${secTime}`);
+        }
+
+        if (secTime >= 10) {
+            start.textContent = `0:${secTime}`;
+            console.log(`0:${secTime}`);
+        }
+
+        if (secTime >= 60) {
+            start.textContent = `1:0${secTime - 60}`;
+            console.log(`1:0${secTime - 60}`);
+        }
+
+        if (secTime >= 70) {
+            start.textContent = `1:${secTime - 60}`;
+            console.log(`1:${secTime - 60}`);
+        }
+    }, 1000);
+
+}
+
+
+setInterval(() => {
+    let progresBar = parseInt((song.currentTime / song.duration) * 200);
+    console.log(progresBar);
+}, 1000)
