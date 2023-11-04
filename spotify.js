@@ -31,20 +31,6 @@ playBtn.addEventListener("click", () => {
 let playFunc = function () {
 
     song.play();
-
-    // let startIntra = setInterval(() => {
-    //     secTime += 1;
-
-    //     start.textContent = `0:${secTime}`;
-    //     console.log(`0:${secTime}`);
-
-    //     if (secTime == `60`) {
-    //         start.textContent = `${minTime}:00`;
-    //         console.log(`${minTime}:00`);
-    //         console.log(minTime);
-    //         clearInterval(startIntra);
-    //     }
-    // }, 1000);
 }
 
 let heart = document.querySelector(".fa-heart");
@@ -67,12 +53,31 @@ song.addEventListener("timeupdate", () => {
 
     let progresBar = parseInt((song.currentTime / song.duration) * 100);
     sikBar.value = progresBar;
-    console.log(progresBar);
+    // console.log(progresBar);
 
     if (progresBar == 100) {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
+    } 
+    if(progresBar <= 9){
+        start.textContent = `0:0${progresBar}`;
+        console.log(`0:0${progresBar}`);
+    }
+
+    if (progresBar >= 10) {
+        start.textContent = `0:${progresBar}`;
+        console.log(`0:${progresBar}`);
+    }
+
+    if(progresBar >= 60){
+        start.textContent = `1:0${progresBar -60}`;
+        console.log(`1:0${progresBar -60}`);
+    }
+
+    if(progresBar >= 70){
+        start.textContent = `1:${progresBar -60}`;
+        console.log(`1:${progresBar -60}`);
     }
 })
 
