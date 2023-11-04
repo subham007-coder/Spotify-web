@@ -57,25 +57,6 @@ song.addEventListener("timeupdate", () => {
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
     }
-    // if(progresBar <= 9){
-    //     start.textContent = `0:0${progresBar}`;
-    //     console.log(`0:0${progresBar}`);
-    // }
-
-    // if (progresBar >= 10) {
-    //     start.textContent = `0:${progresBar}`;
-    //     console.log(`0:${progresBar}`);
-    // }
-
-    // if(progresBar >= 60){
-    //     start.textContent = `1:0${progresBar -60}`;
-    //     console.log(`1:0${progresBar -60}`);
-    // }
-
-    // if(progresBar >= 70){
-    //     start.textContent = `1:${progresBar -60}`;
-    //     console.log(`1:${progresBar -60}`);
-    // }
 })
 
 sikBar.addEventListener("change", () => {
@@ -104,7 +85,7 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
 
 let timeUpdate = function () {
 
-    setInterval(() => {
+   let intarvalsec =  setInterval(() => {
         let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
         console.log(progresBarTime);
 
@@ -129,6 +110,9 @@ let timeUpdate = function () {
             console.log(`1:${progresBarTime - 60}`);
         }
 
+        if(progresBarTime == 190 || song.paused){
+            clearInterval(intarvalsec);
+        }
     }, 1000);
 }
 
