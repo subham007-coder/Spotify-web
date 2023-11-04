@@ -10,7 +10,8 @@ playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         playFunc();
-        timeUpdate();
+        secUpdate();
+        minUpdate();
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -83,9 +84,10 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
 
-let timeUpdate = function () {
+let secUpdate = function () {
 
-   let intarvalsec =  setInterval(() => {
+    let intarvalsec = setInterval(() => {
+
         let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
         console.log(progresBarTime);
 
@@ -100,20 +102,35 @@ let timeUpdate = function () {
             console.log(`0:${progresBarTime}`);
         }
 
-        if (progresBarTime >= 60) {
-            start.textContent = `1:0${progresBarTime - 60}`;
-            console.log(`1:0${progresBarTime - 60}`);
-        }
+        // if (progresBarTime >= 60) {
+        //     start.textContent = `1:0${progresBarTime - 60}`;
+        //     console.log(`1:0${progresBarTime - 60}`);
+        // }
 
-        if (progresBarTime >= 70) {
-            start.textContent = `1:${progresBarTime - 60}`;
-            console.log(`1:${progresBarTime - 60}`);
-        }
+        // if (progresBarTime >= 70) {
+        //     start.textContent = `1:${progresBarTime - 60}`;
+        //     console.log(`1:${progresBarTime - 60}`);
+        // }
 
-        if(progresBarTime == 190 || song.paused){
+        if (progresBarTime == 190 || song.paused) {
             clearInterval(intarvalsec);
         }
     }, 1000);
 }
 
+let min = 0;
 
+let minUpdate = function () {
+    setInterval(() => {
+        min++;
+        console.log(min);
+
+        let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
+        console.log(progresBarTime);
+
+        if (progresBarTime >= 60) {
+            start.textContent = `${min}:${progresBarTime}`;
+            console.log(`${min}:${progresBarTime -60}`);
+        }
+    }, 60000)
+}
