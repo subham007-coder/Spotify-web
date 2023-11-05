@@ -82,6 +82,9 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
 
+
+// song min and sec update
+
 let startTime = document.querySelector(".start-time");
 let endTime = document.querySelector(".end-time");
 
@@ -99,9 +102,9 @@ song.addEventListener('timeupdate', () => {
     let min1 = Math.floor(song_cur/60);
     let sec1 = Math.floor(song_cur%60);
     if(sec1<10){
-        sec1 = `0${sec1}`
+        sec1 = `0${sec1}`;
     }
-    startTime.textContent = `${min1}:${sec1}`
+    startTime.textContent = `${min1}:${sec1}`;
 })
 
 
