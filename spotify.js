@@ -10,8 +10,8 @@ playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         playFunc();
-        secUpdate();
-        minUpdate();
+        // secUpdate();  
+        updateMinAndSec();  setInterval(updateMinAndSec, 1000);
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -84,53 +84,59 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
 
-let secUpdate = function () {
-
-    let intarvalsec = setInterval(() => {
-
-        let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
-        console.log(progresBarTime);
 
 
-        if (progresBarTime <= 9) {
-            start.textContent = `0:0${progresBarTime}`;
-            console.log(`0:0${progresBarTime}`);
-        }
 
-        if (progresBarTime >= 10) {
-            start.textContent = `0:${progresBarTime}`;
-            console.log(`0:${progresBarTime}`);
-        }
+function updateMinAndSec() {
+    const now = new Date();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+  
+    // Update the HTML elements with the minute and second
+    document.getElementById('minute').textContent = (minutes < 10 ? '0' : '') + minutes;
+    document.getElementById('second').textContent = (seconds < 10 ? '0' : '') + seconds;
+  }
+  
+  // Call the function to update the minute and second initially
+//   updateMinAndSec();
+  
+  // Update the minute and second every second
+//   setInterval(updateMinAndSec, 1000);
+  
 
-        // if (progresBarTime >= 60) {
-        //     start.textContent = `1:0${progresBarTime - 60}`;
-        //     console.log(`1:0${progresBarTime - 60}`);
-        // }
 
-        // if (progresBarTime >= 70) {
-        //     start.textContent = `1:${progresBarTime - 60}`;
-        //     console.log(`1:${progresBarTime - 60}`);
-        // }
 
-        if (progresBarTime == 190 || song.paused) {
-            clearInterval(intarvalsec);
-        }
-    }, 1000);
-}
 
-let min = 0;
+// let secUpdate = function () {
 
-let minUpdate = function () {
-    setInterval(() => {
-        min++;
-        console.log(min);
+//     let intarvalsec = setInterval(() => {
 
-        let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
-        console.log(progresBarTime);
+//         let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
+//         console.log(progresBarTime);
 
-        if (progresBarTime >= 60) {
-            start.textContent = `${min}:${progresBarTime}`;
-            console.log(`${min}:${progresBarTime -60}`);
-        }
-    }, 60000)
-}
+
+//         if (progresBarTime <= 9) {
+//             start.textContent = `0:0${progresBarTime}`;
+//             console.log(`0:0${progresBarTime}`);
+//         }
+
+//         if (progresBarTime >= 10) {
+//             start.textContent = `0:${progresBarTime}`;
+//             console.log(`0:${progresBarTime}`);
+//         }
+
+//         if (progresBarTime >= 60) {
+//             start.textContent = `1:0${progresBarTime - 60}`;
+//             console.log(`1:0${progresBarTime - 60}`);
+//         }
+
+//         if (progresBarTime >= 70) {
+//             start.textContent = `1:${progresBarTime - 60}`;
+//             console.log(`1:${progresBarTime - 60}`);
+//         }
+
+//         if (progresBarTime == 190 || song.paused) {
+//             clearInterval(intarvalsec);
+//         }
+//     }, 1000);
+// }
