@@ -2,7 +2,6 @@ let playBtn = document.querySelector(".play");
 
 let pauseBtn = "fa-pause";
 
-let start = document.querySelector(".start-time");
 
 let song = new Audio('songs/Chaleya.mp3');
 
@@ -10,8 +9,7 @@ playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         playFunc();
-        // secUpdate();  
-        updateMinAndSec();  setInterval(updateMinAndSec, 1000);
+
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -28,7 +26,7 @@ playBtn.addEventListener("click", () => {
 
 let playFunc = function () {
     song.play();
-
+    
 }
 
 let heart = document.querySelector(".fa-heart");
@@ -52,7 +50,7 @@ song.addEventListener("timeupdate", () => {
     let progresBar = parseInt((song.currentTime / song.duration) * 100);
     sikBar.value = progresBar;
     // console.log(progresBar);
-
+    
     if (progresBar == 100) {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
@@ -84,59 +82,28 @@ if (Hours >= 18 || Hours == 23) { // Good Evening
     document.querySelector(".timeEvent h3").innerHTML = `Good Evening <i class="ri-moon-cloudy-line"></i>`;
 }
 
+let startTime = document.querySelector(".start-time");
+let endTime = document.querySelector(".end-time");
+
+song.addEventListener('timeupdate', () => {
+    let song_cur = song.currentTime;
+    let song_dur = song.duration;
+
+    let min = Math.floor(song_dur/60);
+    let sec = Math.floor(song_dur%60);
+    if(sec<10){
+        sec = `0${sec}`;
+    }
+    endTime.textContent = `${min}:${sec}`;
+
+    let min1 = Math.floor(song_cur/60);
+    let sec1 = Math.floor(song_cur%60);
+    if(sec1<10){
+        sec1 = `0${sec1}`
+    }
+    startTime.textContent = `${min1}:${sec1}`
+})
 
 
 
-function updateMinAndSec() {
-    const now = new Date();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-  
-    // Update the HTML elements with the minute and second
-    document.getElementById('minute').textContent = (minutes < 10 ? '0' : '') + minutes;
-    document.getElementById('second').textContent = (seconds < 10 ? '0' : '') + seconds;
-  }
-  
-  // Call the function to update the minute and second initially
-//   updateMinAndSec();
-  
-  // Update the minute and second every second
-//   setInterval(updateMinAndSec, 1000);
-  
 
-
-
-
-// let secUpdate = function () {
-
-//     let intarvalsec = setInterval(() => {
-
-//         let progresBarTime = parseInt((song.currentTime / song.duration) * 190);
-//         console.log(progresBarTime);
-
-
-//         if (progresBarTime <= 9) {
-//             start.textContent = `0:0${progresBarTime}`;
-//             console.log(`0:0${progresBarTime}`);
-//         }
-
-//         if (progresBarTime >= 10) {
-//             start.textContent = `0:${progresBarTime}`;
-//             console.log(`0:${progresBarTime}`);
-//         }
-
-//         if (progresBarTime >= 60) {
-//             start.textContent = `1:0${progresBarTime - 60}`;
-//             console.log(`1:0${progresBarTime - 60}`);
-//         }
-
-//         if (progresBarTime >= 70) {
-//             start.textContent = `1:${progresBarTime - 60}`;
-//             console.log(`1:${progresBarTime - 60}`);
-//         }
-
-//         if (progresBarTime == 190 || song.paused) {
-//             clearInterval(intarvalsec);
-//         }
-//     }, 1000);
-// }
