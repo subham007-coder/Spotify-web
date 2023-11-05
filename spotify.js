@@ -26,7 +26,7 @@ playBtn.addEventListener("click", () => {
 
 let playFunc = function () {
     song.play();
-    
+
 }
 
 let heart = document.querySelector(".fa-heart");
@@ -50,7 +50,7 @@ song.addEventListener("timeupdate", () => {
     let progresBar = parseInt((song.currentTime / song.duration) * 100);
     sikBar.value = progresBar;
     // console.log(progresBar);
-    
+
     if (progresBar == 100) {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
@@ -92,16 +92,16 @@ song.addEventListener('timeupdate', () => {
     let song_cur = song.currentTime;
     let song_dur = song.duration;
 
-    let min = Math.floor(song_dur/60);
-    let sec = Math.floor(song_dur%60);
-    if(sec<10){
+    let min = Math.floor(song_dur / 60);
+    let sec = Math.floor(song_dur % 60);
+    if (sec < 10) {
         sec = `0${sec}`;
     }
     endTime.textContent = `${min}:${sec}`;
 
-    let min1 = Math.floor(song_cur/60);
-    let sec1 = Math.floor(song_cur%60);
-    if(sec1<10){
+    let min1 = Math.floor(song_cur / 60);
+    let sec1 = Math.floor(song_cur % 60);
+    if (sec1 < 10) {
         sec1 = `0${sec1}`;
     }
     startTime.textContent = `${min1}:${sec1}`;
@@ -110,3 +110,7 @@ song.addEventListener('timeupdate', () => {
 
 
 
+
+
+
+// Removed from Liked Songs.
