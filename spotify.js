@@ -119,6 +119,7 @@ cardPlay.forEach((allPlayIcon) => {
         all.addEventListener("mouseover", (e) => {
             console.log(e);
             allPlayIcon.style.display = "block";
+            e.stopImmediatePropagation()
         })
         
         all.addEventListener("mouseleave", () => {
