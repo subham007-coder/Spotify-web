@@ -108,9 +108,25 @@ song.addEventListener('timeupdate', () => {
 })
 
 
+let card = document.querySelectorAll(".card");
+
+let cardPlay = document.querySelectorAll(".card-img-icon i:nth-child(2)");
+
+cardPlay.forEach((allPlayIcon) => {
+    
+    card.forEach((all) => {
+        
+        all.addEventListener("mouseover", (e) => {
+            console.log(e);
+            allPlayIcon.style.display = "block";
+        })
+        
+        all.addEventListener("mouseleave", () => {
+            allPlayIcon.style.display = "none";
+        })
+    })
 
 
-
-
+})
 
 // Removed from Liked Songs.
