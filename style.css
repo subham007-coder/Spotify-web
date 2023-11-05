@@ -207,8 +207,14 @@ a {
 
 .card-img-icon i{
     color: #1FDF64;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+    background-color: #000;
+    border-radius: 50%;
+    width: 30px;
+    top: -35px;
+    right: -129px;
     font-size: 30px;
 }
 
