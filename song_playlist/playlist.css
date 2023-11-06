@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 2px;
+    gap: 4px;
 }
 
 .owner-info img{
@@ -62,7 +62,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 20px;
 }
 
 .logo i:nth-child(1){
@@ -93,4 +92,61 @@
 
 .logo i:nth-child(3):hover{
     opacity: 1;
+}
+
+.list-id{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.5;
+}
+
+.list-id p{
+    padding: 15px;
+}
+
+.list-id p:nth-child(2){
+    margin-left: 87px;
+}
+
+#songList{
+    height: 60px;
+    margin-top: 20px;
+    align-items: center;
+    /* border: 2px solid; */
+    display: flex;
+}
+
+#songList .songNumbe{
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+}
+
+#songList .logo img{
+    width: 35px;
+    margin-left: 10px;
+}
+
+#songList .logo p{
+    font-size: 10px;
+}
+
+#songList .SongName{
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+#songList .addDate{
+    font-size: 12px;
+    margin-left: 16%;
+}
+
+#songList .songDuration{
+    font-size: 12px;
+    margin-left: 22%;
+}
+
+.fa-clock{
+    margin-right: 40px;
 }
