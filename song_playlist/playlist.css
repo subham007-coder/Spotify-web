@@ -18,21 +18,36 @@
     display: inline-block;
 }
 
-
 .playlist-text{
     margin-left: 20px;
 }
 
-.playlist-text img{
-    width: 20px;
+.playlist-text .opacity{
+    font-size: 12px;
+    opacity: 0.5;
 }
 
+.playlist-text h1{
+    font-size: 50px;
+}
 
-
-
-/* 
-.playlist-text{
+.playlist-text .owner-info{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-} */
+    align-items: center;
+    justify-content: start;
+    gap: 2px;
+}
+
+.owner-info img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.owner-info h4{
+    font-size: 13px;
+}
+
+.owner-info span{
+    font-size: 15px;
+}
