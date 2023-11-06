@@ -107,27 +107,4 @@ song.addEventListener('timeupdate', () => {
     startTime.textContent = `${min1}:${sec1}`;
 })
 
-
-let card = document.querySelectorAll(".card");
-
-let cardPlay = document.querySelectorAll(".card-img-icon i:nth-child(2)");
-
-cardPlay.forEach((allPlayIcon) => {
-    
-    card.forEach((all) => {
-        
-        all.addEventListener("mouseover", (e) => {
-            console.log(e);
-            allPlayIcon.style.display = "block";
-            e.stopImmediatePropagation()
-        })
-        
-        all.addEventListener("mouseleave", () => {
-            allPlayIcon.style.display = "none";
-        })
-    })
-
-
-})
-
-// Removed from Liked Songs.
+// // Removed from Liked Songs.

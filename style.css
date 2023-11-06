@@ -219,8 +219,9 @@ a {
     font-size: 30px;
 }
 
-.card-img-icon #card-play {
-    display: none;
+.card-img-icon i {
+    opacity: 0;
+    transition: all 0.5s linear;
 }
 
 .card-container {
@@ -231,10 +232,13 @@ a {
     overflow-y: hidden;
 }
 
+.card-container::-webkit-scrollbar{
+    opacity: 0;
+}
+
 .card img {
     height: 165px;
     border-radius: 0.5rem;
-
 }
 
 .card .card-titel {
@@ -250,6 +254,9 @@ a {
 
 .card:hover {
     background-color: #232323;
+    #card-play{
+        opacity: 1;
+    }
 }
 
 .cards h2 {
@@ -591,6 +598,10 @@ a {
 
     .card img {
         width: 25vw;
+    }
+
+    #card-play{
+        display: none;
     }
 
     .controls {
