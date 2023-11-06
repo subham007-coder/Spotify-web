@@ -51,3 +51,46 @@
 .owner-info span{
     font-size: 15px;
 }
+
+#playList{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.logo i:nth-child(1){
+    width: 40px;
+    color: #1FDF64;
+    font-size: 35px;
+}
+.logo i:nth-child(2){
+    width: 40px;
+    color: #ffffff;
+    font-size: 30px;
+    opacity: 0.5;
+}
+.logo i:nth-child(3){
+    width: 40px;
+    color: #ffffff;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+.logo i:nth-child(1):hover{
+    font-size: 37px;
+}
+
+.logo i:nth-child(2):hover{
+    opacity: 1;
+}
+
+.logo i:nth-child(3):hover{
+    opacity: 1;
+}
