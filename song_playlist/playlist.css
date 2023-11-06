@@ -1,0 +1,37 @@
+#playlistbar{
+    margin-top: 20px;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.topBox{
+    display: flex;
+    align-items: end;
+}
+
+.topBox img{
+    width: 220px;
+}
+
+.topBox h3{
+    display: inline-block;
+}
+
+
+.playlist-text{
+    margin-left: 20px;
+}
+
+.playlist-text img{
+    width: 20px;
+}
+
+
+
+/* 
+.playlist-text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} */
