@@ -3,7 +3,7 @@ let playBtn = document.querySelector(".play");
 let pauseBtn = "fa-pause";
 
 
-let song = new Audio('../songs/Chaleya.mp3');
+let song = new Audio("../songs/Chaleya.mp3");
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
