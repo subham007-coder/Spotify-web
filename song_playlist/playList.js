@@ -131,7 +131,7 @@ playListBtn.addEventListener("click", () => {
 
 let songArr = [
     {
-        songNumber: document.querySelector(".main #songList .songNumbe:nth-child(1)").textContent,
+        songNumber: document.querySelector(".main #songList:nth-child(1) .songNumbe").textContent,
     },
     {
         songNumber: document.querySelector(".main #songList:nth-child(2) .songNumbe").textContent,
