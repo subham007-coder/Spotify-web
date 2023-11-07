@@ -129,7 +129,24 @@ playListBtn.addEventListener("click", () => {
 
 // handle song list
 
+let songArr = [
+    {
+        songNumber: document.querySelector(".main #songList .songNumbe:nth-child(1)").textContent,
+    },
+    {
+        songNumber: document.querySelector(".main #songList:nth-child(2) .songNumbe").textContent,
+    },
+    {
+        songNumber: document.querySelector(".main #songList:nth-child(3) .songNumbe").textContent,
+    },
+    {
+        songNumber: document.querySelector(".main #songList:nth-child(4) .songNumbe").textContent,
+    },
+]
 
-
+console.log(songArr[0]);
+console.log(songArr[1]);
+console.log(songArr[2]);
+console.log(songArr[3]);
 
 // Removed from Liked Songs.
