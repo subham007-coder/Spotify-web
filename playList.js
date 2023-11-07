@@ -29,20 +29,19 @@ let playFunc = function () {
 
 }
 
-let heart = document.querySelector(".fa-heart");
+let heartT = document.querySelector(".heart");
 
 let green_heart = document.querySelector("#green_heart");
 
 let sikBar = document.querySelector(".progress-bar");
 
-heart.addEventListener("click", (e) => {
-    console.log("click");
-    heart.id = "none";
+heartT.addEventListener("click", () => {
+    heartT.id = "none";
     green_heart.id = "view";
     green_heart.classList.add("ani");
 })
 green_heart.addEventListener("click", () => {
-    heart.id = "view";
+    heartT.id = "view";
     green_heart.id = "none";
 })
 
