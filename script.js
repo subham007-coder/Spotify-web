@@ -6,6 +6,7 @@ let pauseBtn = "fa-pause";
 let song = new Audio('songs/chaleya.mp3');
 
 
+
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log(song);
