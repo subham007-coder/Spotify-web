@@ -1,8 +1,6 @@
 #playlistbar {
     margin-top: 20px;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
 }
 
 .topBox {
@@ -99,16 +97,10 @@
 .list-id {
     height: 50px;
     align-items: center;
-    /* display: flex;
-    justify-content: space-around; */
+    text-align: center;
     display: grid;
-    grid-template-columns: 547px 294px 1fr 29px;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
     opacity: 0.5;
-}
-
-.list-id p:nth-child(1){
-    padding: 15px;
-    margin-left: 30px;
 }
 
 .main {
@@ -120,15 +112,20 @@
     height: 60px;
     margin-top: 10px;
     align-items: center;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; */
     display: flex;
     justify-content: space-between;
-    /* text-align: center; */
+    cursor: pointer;
+    transition: all 0.5s linear;
 }
 
 #songList:hover{
     background-color: #212121;
+    .songNumbe{
+        display: none;
+    }
+    .logo i{
+        opacity: 1;
+    }
 }
 
 #songList .songNumbe {
@@ -158,8 +155,10 @@
 
 #songList .songDuration {
     font-size: 12px;
+    margin-right: 70px;
 }
 
-/* .fa-clock{
-    margin-right: 40px;
-} */
+#songList .logo i{
+    font-size: 10px;
+    opacity: 0;
+}
