@@ -127,5 +127,9 @@ playListBtn.addEventListener("click", () => {
 
 });
 
+// handle song list
+
+
+
 
 // Removed from Liked Songs.
