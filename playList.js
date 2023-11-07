@@ -107,4 +107,25 @@ song.addEventListener('timeupdate', () => {
     startTime.textContent = `${min1}:${sec1}`;
 })
 
+let playListBtn = document.querySelector('.list');
+
+playListBtn.addEventListener("click", () => {
+    if (song.paused || song.currentTime <= 0) {
+        console.log("start");
+        playFunc();
+
+        playBtn.classList.remove("fa-circle-play");
+        playBtn.classList.remove("play");
+        playBtn.classList.add("fa-pause");
+    } else {
+        console.log("stop");
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+        song.pause();
+    }
+
+});
+
+
 // // Removed from Liked Songs.

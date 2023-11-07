@@ -98,20 +98,18 @@
 
 .list-id {
     height: 50px;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-around; */
+    display: grid;
+    grid-template-columns: 547px 294px 1fr 29px;
     opacity: 0.5;
 }
 
-/* .list-id p:nth-child(2){
-    padding: 15px;
-    margin-left: 28px;
-}
 .list-id p:nth-child(1){
     padding: 15px;
-    margin-left: 10px;
-} */
+    margin-left: 30px;
+}
 
 .main {
     display: grid;
@@ -129,6 +127,10 @@
     /* text-align: center; */
 }
 
+#songList:hover{
+    background-color: #212121;
+}
+
 #songList .songNumbe {
     font-size: 10px;
     font-variant-numeric: tabular-nums;
@@ -136,6 +138,10 @@
 
 #songList .logo img {
     width: 35px;
+}
+
+#songList .logo{
+    padding: 20px;
 }
 
 #songList .logo p {
