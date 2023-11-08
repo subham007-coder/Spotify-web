@@ -183,9 +183,15 @@ playListBtn.addEventListener("click", () => {
 let songArr = [
     {
         songNumber: document.querySelector(".main #songList:nth-child(1)"),
+        songImg: ("../song_playlist/song-logo/chaleya.jpeg"),
+        songH5: "Chaleya (From 'Jawan')",
+        songP: " Anirudh Ravichander, Arijit Singh, Shilpa Rao...",
     },
     {
         songNumber: document.querySelector(".main #songList:nth-child(2)"),
+        songImg: ("../song_playlist/song-logo/song2.jpeg"),
+        songH5: "Zinda Banda (From 'Jawan')",
+        songP: "Anirudh Ravichander, Irshad Kamil...",
     },
     {
         songNumber: document.querySelector(".main #songList:nth-child(3)"),
@@ -195,10 +201,10 @@ let songArr = [
     },
 ]
 
-let songOne = songArr[0].songNumber;
-let songTwo = songArr[1].songNumber;
-let songThre = songArr[2].songNumber;
-let songFour = songArr[3].songNumber;
+    let songOne = songArr[0].songNumber;
+    let songTwo = songArr[1].songNumber;
+    let songThre = songArr[2].songNumber;
+    let songFour = songArr[3].songNumber;
 
 songOne.addEventListener("click", () => {
 
@@ -219,12 +225,19 @@ songOne.addEventListener("click", () => {
 
 })
 
+let albumImg = document.querySelector(".album img");
+let albumH5 = document.querySelector(".album h5");
+let albumP = document.querySelector(".album p");
+
+
 songTwo.addEventListener("click", () => {
     if (Zinda.paused || Zinda.currentTime <= 0) {
         console.log("start");
         Zinda.play();
         song.pause();
-
+        albumImg.src = songArr[1].songImg;
+        albumH5.textContent = songArr[1].songH5;
+        albumP.textContent = songArr[1].songP;
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");

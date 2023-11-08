@@ -62,6 +62,14 @@
     gap: 10px;
 }
 
+.logo .album2{
+    display: flex;
+}
+
+.logo .album2 .play-text2{
+    margin-left: 10px;
+}
+
 .logo i:nth-child(1) {
     width: 40px;
     color: #1FDF64;
