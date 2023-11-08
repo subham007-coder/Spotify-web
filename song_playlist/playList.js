@@ -205,7 +205,7 @@ songOne.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
         song.play();
-        Zinda.pause()
+        Zinda.pause();
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
