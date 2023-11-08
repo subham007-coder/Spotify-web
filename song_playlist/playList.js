@@ -5,6 +5,7 @@ let pauseBtn = "fa-pause";
 
 let song = new Audio("../songs/Chaleya.mp3");
 let Zinda = new Audio('../songs/Zinda Banda.mp3');
+let Ramaiya = new Audio('../songs/Not Ramaiya Jawan.mp3');
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
@@ -197,14 +198,21 @@ let songArr = [
         songNumber: document.querySelector(".main #songList:nth-child(3)"),
     },
     {
-        songNumber: document.querySelector(".main #songList:nth-child(4) .songNumbe"),
+        songNumber: document.querySelector(".main #songList:nth-child(4)"),
+        songImg: ("../song_playlist/song-logo/song4.jpeg"),
+        songH5: "Not Ramaiya Vastavaiya (From 'Jawan')",
+        songP: "Anirudh Ravichander, Vishal Dadlani,...",
     },
-]
+];
 
-    let songOne = songArr[0].songNumber;
-    let songTwo = songArr[1].songNumber;
-    let songThre = songArr[2].songNumber;
-    let songFour = songArr[3].songNumber;
+let albumImg = document.querySelector(".album img");
+let albumH5 = document.querySelector(".album h5");
+let albumP = document.querySelector(".album p");
+
+let songOne = songArr[0].songNumber;
+let songTwo = songArr[1].songNumber;
+let songThre = songArr[2].songNumber;
+let songFour = songArr[3].songNumber;
 
 songOne.addEventListener("click", () => {
 
@@ -212,6 +220,11 @@ songOne.addEventListener("click", () => {
         console.log("start");
         song.play();
         Zinda.pause();
+        Ramaiya.pause();
+        albumImg.src = songArr[0].songImg;
+        albumH5.textContent = songArr[0].songH5;
+        albumP.textContent = songArr[0].songP;
+
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -223,11 +236,7 @@ songOne.addEventListener("click", () => {
         song.pause();
     }
 
-})
-
-let albumImg = document.querySelector(".album img");
-let albumH5 = document.querySelector(".album h5");
-let albumP = document.querySelector(".album p");
+});
 
 
 songTwo.addEventListener("click", () => {
@@ -235,6 +244,7 @@ songTwo.addEventListener("click", () => {
         console.log("start");
         Zinda.play();
         song.pause();
+        Ramaiya.pause();
         albumImg.src = songArr[1].songImg;
         albumH5.textContent = songArr[1].songH5;
         albumP.textContent = songArr[1].songP;
@@ -247,6 +257,40 @@ songTwo.addEventListener("click", () => {
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
         Zinda.pause();
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+songFour.addEventListener("click", () => {
+    if (Ramaiya.paused || Ramaiya.currentTime <= 0) {
+        console.log("start");
+        Ramaiya.play();
+        song.pause(); // chaleya song
+        Zinda.pause();
+        albumImg.src = songArr[3].songImg;
+        albumH5.textContent = songArr[3].songH5;
+        albumP.textContent = songArr[3].songP;
+        playBtn.classList.remove("fa-circle-play");
+        playBtn.classList.remove("play");
+        playBtn.classList.add("fa-pause");
+    } else {
+        console.log("stop");
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+        Ramaiya.pause();
     }
 })
 
