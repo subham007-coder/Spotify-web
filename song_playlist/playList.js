@@ -4,6 +4,7 @@ let pauseBtn = "fa-pause";
 
 
 let song = new Audio("../songs/Chaleya.mp3");
+let Zinda = new Audio('../songs/Zinda Banda.mp3');
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
@@ -26,7 +27,10 @@ playBtn.addEventListener("click", () => {
 
 let playFunc = function () {
     song.play();
+}
 
+let playZinda = function () {
+    Zinda.play();
 }
 
 let heartT = document.querySelector(".heart");
@@ -45,11 +49,11 @@ green_heart.addEventListener("click", () => {
     green_heart.id = "none";
 })
 
+// sikbar update for chaleya song
 song.addEventListener("timeupdate", () => {
 
     let progresBar = parseInt((song.currentTime / song.duration) * 100);
     sikBar.value = progresBar;
-    // console.log(progresBar);
 
     if (progresBar == 100) {
         playBtn.classList.add("fa-circle-play");
@@ -63,7 +67,25 @@ sikBar.addEventListener("change", () => {
 });
 
 
-// say time to user
+// sikbar update for Zinda song
+Zinda.addEventListener("timeupdate", () => {
+
+    let progresBar = parseInt((Zinda.currentTime / Zinda.duration) * 100);
+    sikBar.value = progresBar;
+
+    if (progresBar == 100) {
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+    }
+})
+
+sikBar.addEventListener("change", () => {
+    Zinda.currentTime = sikBar.value * Zinda.duration / 100;
+});
+
+
+// say time to user morning,night
 
 let TimeEvent = new Date;
 
@@ -106,6 +128,35 @@ song.addEventListener('timeupdate', () => {
     }
     startTime.textContent = `${min1}:${sec1}`;
 })
+
+
+
+// zinda min and sec update
+
+let zindaStartTime = document.querySelector(".start-time");
+let zindaEndTime = document.querySelector(".end-time");
+
+Zinda.addEventListener('timeupdate', () => {
+    let song_cur = Zinda.currentTime;
+    let song_dur = Zinda.duration;
+
+    let min = Math.floor(song_dur / 60);
+    let sec = Math.floor(song_dur % 60);
+    if (sec < 10) {
+        sec = `0${sec}`;
+    }
+    zindaEndTime.textContent = `${min}:${sec}`;
+
+    let min1 = Math.floor(song_cur / 60);
+    let sec1 = Math.floor(song_cur % 60);
+    if (sec1 < 10) {
+        sec1 = `0${sec1}`;
+    }
+    zindaStartTime.textContent = `${min1}:${sec1}`;
+})
+
+
+// green playlist button
 
 let playListBtn = document.querySelector('.list');
 
@@ -153,8 +204,8 @@ songOne.addEventListener("click", () => {
 
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
-        playFunc();
-
+        song.play();
+        Zinda.pause()
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -169,9 +220,10 @@ songOne.addEventListener("click", () => {
 })
 
 songTwo.addEventListener("click", () => {
-    if (song.paused || song.currentTime <= 0) {
+    if (Zinda.paused || Zinda.currentTime <= 0) {
         console.log("start");
-        playFunc();
+        Zinda.play();
+        song.pause();
 
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
@@ -181,7 +233,7 @@ songTwo.addEventListener("click", () => {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
-        song.pause();
+        Zinda.pause();
     }
 })
 
