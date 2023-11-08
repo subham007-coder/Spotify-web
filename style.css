@@ -180,6 +180,10 @@ a {
     margin-right: 1.5rem;
 }
 
+.timeEvent h3{
+    font-size: 2vw;
+}
+
 .dark-badge {
     background-color: #000;
     color: #fff;

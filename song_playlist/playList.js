@@ -218,7 +218,7 @@ songOne.addEventListener("click", () => {
 
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
-        song.play();
+        song.play();// chaleya song
         Zinda.pause();
         Ramaiya.pause();
         albumImg.src = songArr[0].songImg;
@@ -233,7 +233,7 @@ songOne.addEventListener("click", () => {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
-        song.pause();
+        song.pause();// chaleya song
     }
 
 });
@@ -243,7 +243,7 @@ songTwo.addEventListener("click", () => {
     if (Zinda.paused || Zinda.currentTime <= 0) {
         console.log("start");
         Zinda.play();
-        song.pause();
+        song.pause();// chaleya song
         Ramaiya.pause();
         albumImg.src = songArr[1].songImg;
         albumH5.textContent = songArr[1].songH5;
@@ -292,7 +292,7 @@ songFour.addEventListener("click", () => {
         playBtn.classList.remove("fa-pause");
         Ramaiya.pause();
     }
-})
+});
 
 
 // Removed from Liked Songs.

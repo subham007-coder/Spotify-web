@@ -5,11 +5,11 @@
 
 .topBox {
     display: flex;
-    align-items: end;
+    align-items: flex-start;
 }
 
 .topBox img {
-    width: 220px;
+    width: 150px;
 }
 
 .topBox h3 {
@@ -21,18 +21,17 @@
 }
 
 .playlist-text .opacity {
-    font-size: 12px;
+    font-size: 10px;
     opacity: 0.5;
 }
 
 .playlist-text h1 {
-    font-size: 50px;
+    font-size: 5vw;
 }
 
 .playlist-text .owner-info {
     display: flex;
     align-items: center;
-    justify-content: start;
     gap: 4px;
 }
 
@@ -47,7 +46,7 @@
 }
 
 .owner-info span {
-    font-size: 15px;
+    font-size: 10px;
 }
 
 #playList {
@@ -62,11 +61,11 @@
     gap: 10px;
 }
 
-.logo .album2{
+.logo .album2 {
     display: flex;
 }
 
-.logo .album2 .play-text2{
+.logo .album2 .play-text2 {
     margin-left: 10px;
 }
 
@@ -126,12 +125,14 @@
     transition: all 0.5s linear;
 }
 
-#songList:hover{
+#songList:hover {
     background-color: #212121;
-    .songNumbe{
+
+    .songNumbe {
         display: none;
     }
-    .logo i{
+
+    .logo i {
         opacity: 1;
     }
 }
@@ -145,7 +146,7 @@
     width: 35px;
 }
 
-#songList .logo{
+#songList .logo {
     padding: 20px;
 }
 
@@ -163,10 +164,49 @@
 
 #songList .songDuration {
     font-size: 12px;
-    margin-right: 70px;
 }
 
-#songList .logo i{
+#songList .logo i {
     font-size: 10px;
     opacity: 0;
+}
+
+.list-id p {
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+/* media */
+
+@media (max-width: 600px) {
+    #songList .logo p {
+        font-size: 1.5vw;
+    }
+
+    #songList .SongName{
+        font-size: 1.3vw;
+    }
+    
+    #songList .addDate{
+        margin-left: 3px;
+        font-size: 1.5vw;
+    }
+
+    #songList .songDuration{
+        margin-left: 3px;
+        font-size: 1.5vw;
+    }
+
+    #songList .logo {
+        padding: 0;
+    }
+    
+    .logo i {
+        display: none;
+    }
 }
