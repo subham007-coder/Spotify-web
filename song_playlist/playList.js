@@ -131,22 +131,49 @@ playListBtn.addEventListener("click", () => {
 
 let songArr = [
     {
-        songNumber: document.querySelector(".main #songList:nth-child(1) .songNumbe").textContent,
+        songNumber: document.querySelector(".main #songList:nth-child(1)"),
     },
     {
-        songNumber: document.querySelector(".main #songList:nth-child(2) .songNumbe").textContent,
+        songNumber: document.querySelector(".main #songList:nth-child(2)"),
     },
     {
-        songNumber: document.querySelector(".main #songList:nth-child(3) .songNumbe").textContent,
+        songNumber: document.querySelector(".main #songList:nth-child(3)"),
     },
     {
-        songNumber: document.querySelector(".main #songList:nth-child(4) .songNumbe").textContent,
+        songNumber: document.querySelector(".main #songList:nth-child(4) .songNumbe"),
     },
 ]
 
-console.log(songArr[0]);
-console.log(songArr[1]);
-console.log(songArr[2]);
-console.log(songArr[3]);
+// console.log(songArr[0].songNumber);
+// console.log(songArr[1].songNumber);
+// console.log(songArr[2].songNumber);
+// console.log(songArr[3].songNumber);
+
+let songOne = songArr[0].songNumber;
+let songTwo = songArr[1].songNumber;
+let songThre = songArr[2].songNumber;
+let songFour = songArr[3].songNumber;
+
+songOne.addEventListener("click", () => {
+
+    if (song.paused || song.currentTime <= 0) {
+        console.log("start");
+        playFunc();
+
+        playBtn.classList.remove("fa-circle-play");
+        playBtn.classList.remove("play");
+        playBtn.classList.add("fa-pause");
+    } else {
+        console.log("stop");
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+        song.pause();
+    }
+    
+})
+
+
+
 
 // Removed from Liked Songs.
