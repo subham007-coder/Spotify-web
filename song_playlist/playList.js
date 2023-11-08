@@ -144,11 +144,6 @@ let songArr = [
     },
 ]
 
-// console.log(songArr[0].songNumber);
-// console.log(songArr[1].songNumber);
-// console.log(songArr[2].songNumber);
-// console.log(songArr[3].songNumber);
-
 let songOne = songArr[0].songNumber;
 let songTwo = songArr[1].songNumber;
 let songThre = songArr[2].songNumber;
@@ -170,10 +165,25 @@ songOne.addEventListener("click", () => {
         playBtn.classList.remove("fa-pause");
         song.pause();
     }
-    
+
 })
 
+songTwo.addEventListener("click", () => {
+    if (song.paused || song.currentTime <= 0) {
+        console.log("start");
+        playFunc();
 
+        playBtn.classList.remove("fa-circle-play");
+        playBtn.classList.remove("play");
+        playBtn.classList.add("fa-pause");
+    } else {
+        console.log("stop");
+        playBtn.classList.add("fa-circle-play");
+        playBtn.classList.add("play");
+        playBtn.classList.remove("fa-pause");
+        song.pause();
+    }
+})
 
 
 // Removed from Liked Songs.
