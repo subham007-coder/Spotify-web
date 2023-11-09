@@ -10,7 +10,7 @@ let Ramaiya = new Audio('../songs/Not Ramaiya Jawan.mp3');
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
-        console.log("start");
+          
         playFunc();
 
         playBtn.classList.remove("fa-circle-play");
@@ -18,7 +18,6 @@ playBtn.addEventListener("click", () => {
         playBtn.classList.add("fa-pause");
     }
     else {
-        console.log("stop");
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
@@ -245,7 +244,7 @@ let playListBtn = document.querySelector('.list');
 
 playListBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
-        console.log("start");
+          
         playFunc();
 
         playBtn.classList.remove("fa-circle-play");
@@ -298,8 +297,11 @@ let songFour = songArr[3].songNumber;
 
 songOne.addEventListener("click", () => {
 
+    if (song.play()){
+        song.pause();
+    }
+
     if (chaleya.paused || chaleya.currentTime <= 0) {
-        console.log("start");
         // playFunc();
         song = chaleya;
         song.play(); // chaleya song
@@ -318,7 +320,7 @@ songOne.addEventListener("click", () => {
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
         playBtn.classList.remove("fa-pause");
-        song.pause();// chaleya song
+        chaleya.pause();// chaleya song
     }
 
 });
@@ -326,9 +328,10 @@ songOne.addEventListener("click", () => {
 
 songTwo.addEventListener("click", () => {
     if (Zinda.paused || Zinda.currentTime <= 0) {
-        console.log("start");
-        Zinda.play();
-        song.pause();// chaleya song
+          
+        song = Zinda;
+        song.play();// chaleya song
+        chaleya.pause();
         Ramaiya.pause();
         albumImg.src = songArr[1].songImg;
         albumH5.textContent = songArr[1].songH5;
@@ -348,10 +351,11 @@ songTwo.addEventListener("click", () => {
 
 songFour.addEventListener("click", () => {
     if (Ramaiya.paused || Ramaiya.currentTime <= 0) {
-        console.log("start");
-        Ramaiya.play();
-        song.pause(); // chaleya song
+          
+        song = Ramaiya;
+        song.play(); // chaleya song
         Zinda.pause();
+        chaleya.pause();
         albumImg.src = songArr[3].songImg;
         albumH5.textContent = songArr[3].songH5;
         albumP.textContent = songArr[3].songP;
@@ -368,5 +372,10 @@ songFour.addEventListener("click", () => {
     }
 });
 
+// pending work
 
-// // Removed from Liked Songs.
+// Like and Remove Songs.
+
+// next and previos button work
+
+// volume up down
