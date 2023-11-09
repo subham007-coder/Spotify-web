@@ -4,6 +4,7 @@ let pauseBtn = "fa-pause";
 
 
 let song = new Audio("../songs/Chaleya.mp3");
+let chaleya = new Audio ('../songs/Chaleya.mp3')
 let Zinda = new Audio('../songs/Zinda Banda.mp3');
 let Ramaiya = new Audio('../songs/Not Ramaiya Jawan.mp3');
 
@@ -15,7 +16,8 @@ playBtn.addEventListener("click", () => {
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
-    } else {
+    }
+    else {
         console.log("stop");
         playBtn.classList.add("fa-circle-play");
         playBtn.classList.add("play");
@@ -28,10 +30,7 @@ playBtn.addEventListener("click", () => {
 
 let playFunc = function () {
     song.play();
-}
-
-let playZinda = function () {
-    Zinda.play();
+    song = chaleya;
 }
 
 let heartT = document.querySelector(".heart");
@@ -69,6 +68,7 @@ sikBar.addEventListener("change", () => {
 
 
 // sikbar update for Zinda song
+
 Zinda.addEventListener("timeupdate", () => {
 
     let progresBar = parseInt((Zinda.currentTime / Zinda.duration) * 100);
@@ -218,9 +218,11 @@ songOne.addEventListener("click", () => {
 
     if (song.paused || song.currentTime <= 0) {
         console.log("start");
-        song.play();// chaleya song
+        playFunc();
+        // song.play();// chaleya song
         Zinda.pause();
         Ramaiya.pause();
+        
         albumImg.src = songArr[0].songImg;
         albumH5.textContent = songArr[0].songH5;
         albumP.textContent = songArr[0].songP;
@@ -248,6 +250,7 @@ songTwo.addEventListener("click", () => {
         albumImg.src = songArr[1].songImg;
         albumH5.textContent = songArr[1].songH5;
         albumP.textContent = songArr[1].songP;
+        song = Zinda;
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
@@ -260,19 +263,6 @@ songTwo.addEventListener("click", () => {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 songFour.addEventListener("click", () => {
     if (Ramaiya.paused || Ramaiya.currentTime <= 0) {
         console.log("start");
@@ -282,6 +272,7 @@ songFour.addEventListener("click", () => {
         albumImg.src = songArr[3].songImg;
         albumH5.textContent = songArr[3].songH5;
         albumP.textContent = songArr[3].songP;
+        song = Ramaiya;
         playBtn.classList.remove("fa-circle-play");
         playBtn.classList.remove("play");
         playBtn.classList.add("fa-pause");
