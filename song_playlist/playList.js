@@ -372,10 +372,10 @@ songFour.addEventListener("click", () => {
     }
 });
 
-// pending work
+// pending work.
 
 // Like and Remove Songs.
 
-// next and previos button work
+// next and previos button work.
 
-// volume up down
+// volume up down.
