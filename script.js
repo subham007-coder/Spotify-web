@@ -105,6 +105,27 @@ song.addEventListener('timeupdate', () => {
         sec1 = `0${sec1}`;
     }
     startTime.textContent = `${min1}:${sec1}`;
-})
+});
+
+// API handel
+
+const url = 'https://geniurl.p.rapidapi.com/search/top?q=Lady%20Gaga%20-%20Born%20This%20Way&artist=Lady%20Gaga&song=Born%20This%20Way';
+
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '8f50398d8cmsh3cba37757800f57p1727bdjsn4036f59dae74',
+        'X-RapidAPI-Host': 'geniurl.p.rapidapi.com'
+    }
+};
+
+try {
+    const response = await fetch(url, options);
+    const result = await response.text();
+    console.log(result);
+} catch (error) {
+    console.error(error);
+}
+
 
 // // Removed from Liked Songs.
