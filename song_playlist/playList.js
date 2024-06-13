@@ -244,7 +244,7 @@ let playListBtn = document.querySelector('.list');
 
 playListBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
-          
+
         playFunc();
 
         playBtn.classList.remove("fa-circle-play");
