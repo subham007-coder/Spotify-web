@@ -10,7 +10,7 @@ let Ramaiya = new Audio('../songs/Not Ramaiya Jawan.mp3');
 
 playBtn.addEventListener("click", () => {
     if (song.paused || song.currentTime <= 0) {
-          
+
         playFunc();
 
         playBtn.classList.remove("fa-circle-play");
@@ -65,7 +65,7 @@ sikBar.addEventListener("change", () => {
     song.currentTime = sikBar.value * song.duration / 100;
 });
 
-// sikbar update for chaleya song
+// sickbar update for chaleya song
 
 chaleya.addEventListener("timeupdate", () => {
 
@@ -83,7 +83,7 @@ sikBar.addEventListener("change", () => {
     chaleya.currentTime = sikBar.value * chaleya.duration / 100;
 });
 
-// sikbar update for Zinda song
+// sikcbar update for Zinda song
 
 Zinda.addEventListener("timeupdate", () => {
 
@@ -101,7 +101,7 @@ sikBar.addEventListener("change", () => {
     Zinda.currentTime = sikBar.value * Zinda.duration / 100;
 });
 
-// sikbar update for Ramaiya song
+// sickbar update for Ramaiya song
 
 Ramaiya.addEventListener("timeupdate", () => {
 
@@ -257,7 +257,6 @@ playListBtn.addEventListener("click", () => {
         playBtn.classList.remove("fa-pause");
         song.pause();
     }
-
 });
 
 // handle song list
@@ -328,7 +327,7 @@ songOne.addEventListener("click", () => {
 
 songTwo.addEventListener("click", () => {
     if (Zinda.paused || Zinda.currentTime <= 0) {
-          
+
         song = Zinda;
         song.play();// chaleya song
         chaleya.pause();
@@ -351,7 +350,7 @@ songTwo.addEventListener("click", () => {
 
 songFour.addEventListener("click", () => {
     if (Ramaiya.paused || Ramaiya.currentTime <= 0) {
-          
+
         song = Ramaiya;
         song.play(); // chaleya song
         Zinda.pause();
